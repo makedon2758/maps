@@ -1,0 +1,386 @@
+li,
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	font-size: inherit;
+	color: inherit;
+	text-decoration: none;
+}
+
+
+
+element.style {}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none !important;
+}
+
+.wid {
+	width: 100%;
+	overflow: auto;
+}
+
+@media (max-width: 769px) {
+	.wid {
+		height: 400px;
+
+	}
+
+	/* Скрываем scrollbar для Chrome, Safari и Opera */
+	.wid::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Скрываем scrollbar для IE, Edge и Firefox */
+	.wid {
+		-ms-overflow-style: none;
+		/* IE и Edge */
+		scrollbar-width: none;
+		/* Firefox */
+	}
+}
+
+svg {
+	width: 1421;
+	height: 712;
+	/* fill: none; */
+}
+
+svg:not(:root) {
+	overflow-clip-margin: content-box;
+	overflow: hidden;
+}
+
+
+.show {
+	right: 0;
+}
+
+
+
+/* .class:hover path.fill{
+	cursor: pointer;
+fill:#dcdcdc;;
+	transition: all 0.3s ease 0s;
+	
+}  */
+/* [data-building]:hover{
+	cursor: pointer;
+fill:#dcdcdc;
+	transition: all 0.3s ease 0s;	
+} */
+
+.hidd {
+	right: -300%;
+}
+
+.popup-map {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 354px;
+	max-height: 100%;
+	padding: 0 38px 20px 38px;
+	background-color: #222;
+	overflow: auto;
+	transition: all 0.3s ease 0s;
+}
+
+@media (max-width: 500px) {
+	.popup-map {
+		top: 55%;
+		width: 100%;
+		max-height: 45%;
+	}
+}
+
+.popup-map__content {
+	color: #fff;
+	font-family: Graphik Cy;
+	font-style: normal;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: normal;
+	display: flex;
+	flex-direction: column;
+
+}
+
+
+.popup-map__close {
+	align-self: end;
+	overflow: hidden;
+	color: #fff;
+	font-size: 40px;
+}
+
+.popup-map__close:hover a {
+	color: red;
+	text-decoration: none;
+}
+
+.popup-map__house {
+	font-size: 25px;
+	font-family: SangBleu Sunrise;
+}
+
+.popup-map__house span {
+	text-transform: uppercase;
+}
+
+.popup-map__ulica {
+	color: #656565;
+	display: flex;
+	flex-direction: column;
+	gap: 19px;
+}
+
+.popup-map__free {
+	margin-bottom: 28px;
+}
+
+.popup-map__room {
+	margin-bottom: 28px;
+}
+
+
+.room-map__tuitl {
+
+	margin-bottom: 16px;
+}
+
+.room-map__foto {
+	max-width: 278px;
+	max-height: 209px;
+	margin-bottom: 11px;
+}
+
+@media (max-width: 500px) {
+	.room-map__foto {
+		max-width: 500px;
+		max-height: 309px;
+		margin-bottom: 20px;
+	}
+}
+
+.room-map__foto img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.room-map__body {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 38px;
+}
+
+.body-map__price {
+	flex: 0 1 50%;
+}
+
+.body-map__price {
+	margin-bottom: 16px;
+}
+
+.body-map__price span:nth-child(2) {
+	color: #656565;
+	font-family: SangBleu Sunrise;
+}
+
+.body-map__price>span {
+	margin-left: 2px;
+}
+
+.price {
+	text-transform: uppercase;
+}
+
+.body-map__button {
+	flex: 0 1 40%;
+	margin-left: auto;
+	width: 89px;
+	height: 29px;
+	border: 1px solid #FFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.body-map__button:hover {
+	border: 1px solid red;
+	cursor: pointer;
+}
+
+.body-map__button:hover a {
+	color: red;
+	text-decoration: none;
+}
+
+.body-map__info {
+	display: flex;
+	flex: 0 1 50%;
+}
+
+.info-map__floor {
+	border-right: 2px solid #656565;
+	flex: 0 1 50%;
+	margin-right: 15px;
+}
+
+.info-map__square {
+	align-self: end;
+	flex: 0 1 50%;
+}
+
+
+.tab-map {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tab-map__img {
+	max-width: 450px;
+	height: 2px;
+}
+
+.tab-map__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.nav-map {}
+
+.nav-map__llist {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 35px;
+}
+
+.nav-map__link {
+	display: flex;
+	gap: 9px;
+	color: #000;
+	font-family: Graphik Cy;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+
+}
+
+@media (max-width: 768px) {
+	.nav-map__link {
+		font-size: 15px;
+	}
+
+	.wid {
+		position: relative;
+	}
+
+	.wid svg {
+		transform: scale(0.7);
+	}
+}
+
+@media (max-width: 500px) {
+	.nav-map__llist {
+		gap: 15px;
+	}
+
+	.tab-map__img {
+		max-width: 320px;
+	}
+
+
+}
+
+.nav-map__link:hover {
+	cursor: pointer;
+	color: red;
+	transform: scale(1.1);
+}
+
+
+.map__header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Скрываем scrollbar для Chrome, Safari и Opera */
+.popup-map::-webkit-scrollbar {
+	display: none;
+}
+
+/* Скрываем scrollbar для IE, Edge и Firefox */
+.popup-map {
+	-ms-overflow-style: none;
+	/* IE и Edge */
+	scrollbar-width: none;
+	/* Firefox */
+}
+
+.buttonss {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+	margin-top: 30px;
+}
+
+.plus,
+.minus {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	font-size: 28px;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+
+.btns {
+	display: flex;
+	gap: 20px;
+
+}
+
+.text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.text svg{
+	width: 100px;
+}
+@media (min-width:768px) {
+	.buttonss {
+		display: none;
+	}
+}
+
+
+.on{
+	opacity: 1;
+}
+
+.off{
+	opacity: 0.5;
+}
