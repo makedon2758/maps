@@ -60,22 +60,20 @@ if (widt <= 500) {
 
 ar2.forEach(el => {
 	el.addEventListener('click', function (e) {
-		// e.target.parentNode.querySelector('[data-building]')
+		// el.dataset.building 
 		hidd();
 		show();
 	});
 
 });
-popMapClose.addEventListener('click', function () {
+popMapClose.addEventListener('click', function (e) {
+	e.preventDefault();
 	hidd();
 });
 
 
 
 document.querySelector('.map-filters__group').addEventListener('click', e => {
-
-	// console.log(e.target.parentNode.dataset.filter.trim());
-
 	let filterDataset = e.target.parentNode.dataset;
 	let filterValues = [];
 	hidd();
@@ -83,7 +81,7 @@ document.querySelector('.map-filters__group').addEventListener('click', e => {
 	if (e.target.parentNode.classList.contains('on')) {
 		hidd();
 		pop.forEach(el => {
-			el.style.fill = 'white';
+			el.classList.remove('hv');
 		})
 
 		mapBtn.forEach(ele => {
@@ -96,7 +94,7 @@ document.querySelector('.map-filters__group').addEventListener('click', e => {
 		}
 
 		pop.forEach(path => {
-			path.style.fill = '';
+			path.classList.remove('hv');
 		})
 
 		filterValues.forEach(elm => {
@@ -109,7 +107,7 @@ document.querySelector('.map-filters__group').addEventListener('click', e => {
 						if (popEl.building.trim().length > 2) {
 							popEl.building.split(' ').forEach(ee => {
 								if (ee == it) {
-									el.style.fill = '#dcdcdc';
+									el.classList.add('hv');
 
 									mapBtn.forEach(ele => {
 										if (ele == e.target.parentNode) {
@@ -125,7 +123,7 @@ document.querySelector('.map-filters__group').addEventListener('click', e => {
 							})
 						} else {
 							if (el.dataset.building == it) {
-								el.style.fill = '#dcdcdc';
+								el.classList.add('hv');
 								mapBtn.forEach(ele => {
 									if (ele == e.target.parentNode) {
 										ele.classList.remove('off')
@@ -143,7 +141,7 @@ document.querySelector('.map-filters__group').addEventListener('click', e => {
 			} else {
 				const building = document.querySelector(`[data-building="${elm.trim()}"]`);
 				console.log(elm.trim());
-				building.style.fill = '#dcdcdc';
+				building.classList.add('hv');
 				mapBtn.forEach(el => {
 					if (el == e.target.parentNode) {
 						el.classList.remove('off')
@@ -165,25 +163,24 @@ document.querySelector('.map-filters__group').addEventListener('click', e => {
 
 // ====
 document.documentElement.addEventListener('click', (e) => {
-let bool = false;
+	let bool = false;
 	if (e.target.closest('.popup-map') || e.target.closest('.map-filters__group')) {
 		return;
-	} 
+	}
 
-		ar2.forEach(ite => {
-			if(ite.dataset.building == e.target.dataset.building){
-				bool = true;
-			}
-		})
-if(bool){
-	return;
-}
-	
+	ar2.forEach(ite => {
+		if (ite.dataset.building == e.target.dataset.building) {
+			bool = true;
+		}
+	})
+	if (bool) {
+		return;
+	}
 
+	pop.forEach(el => {
+		el.classList.remove('hv')
+	})
 	hidd();
-	// pop.forEach(el => {
-	// 	el.style.fill = '';
-	// })
 	mapBtn.forEach(el => {
 		el.classList.remove('on')
 		el.classList.remove('off')
